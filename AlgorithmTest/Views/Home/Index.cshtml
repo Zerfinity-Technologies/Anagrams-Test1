@@ -1,0 +1,27 @@
+﻿@model AlgoModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form action="Home/GetResultAnagrams" method="post">
+
+        <label for="string">String :</label><br>
+        <input type="text" id="InputString" name="InputString"><br>
+
+        <label for="anagram">Anagram to be searched for :</label><br>
+        <input type="text" id="AnagramString" name="AnagramString"><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+    <div> Result </div>
+    <ul>
+        @foreach (int result in Model.output)
+        {
+            <li>@result</li>
+        }
+    </ul>
+
+</div>
